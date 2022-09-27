@@ -1,0 +1,30 @@
+<mvc:View controllerName="com.sap.demo.controller.App"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:core="sap.ui.core">
+    <App id="app">
+	
+<Page id="page1" title="My Bank Details">
+   <headerContent>
+    <Button
+         id="Refresh"
+         type="Emphasized"
+         text="Home"
+         class="sapUiSmallMarginEnd"/>
+    </headerContent>
+	<content>
+  
+    <core:Fragment id="bankDetailsFragment" 
+    fragmentName="com.sap.demo.view.fragments.BankDetails"
+    class="sapUiSmallMargin"
+    type="XML"/>
+    
+         <Button
+         id="helloDialogButton"
+         type="Neutral"
+         text="Find more details.."
+         press=".onOpenBankDetails"
+         class="sapUiSmallMarginBegin"/>
+		</content>
+      </Page>
+    </App>
+</mvc:View>
