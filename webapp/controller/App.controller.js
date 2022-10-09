@@ -9,23 +9,35 @@ sap.ui.define([
 
         return Controller.extend("com.sap.demo.controller.App", {
             onInit: function () {
+                var browserLan = navigator.language,
+                    lanModel;
+                if (browserLan == 'es')
+                    lanModel = "i18n_es";
+                else if (browserLan == 'en')
+                    lanModel = "i18n_en";
+                else if (browserLan == 'de')
+                    lanModel = "i18n_de";
+                else
+                    lanModel = "i18n_en";
 
+                var oResourceModel = this.getOwnerComponent().getModel(lanModel);
+                this.getOwnerComponent().setModel(oResourceModel, "i18n");
             },
-            onOpenBankDetails: function(oEvent){
+            onOpenBankDetails: function (oEvent) {
                 // create dialog lazily
                 if (!this.moreBankDetail) {
                     this.moreBankDetail = this.loadFragment({
                         name: "com.sap.demo.view.fragments.MoreBankDetails"
                     });
-                } 
-                this.moreBankDetail.then(function(oDialog) {
+                }
+                this.moreBankDetail.then(function (oDialog) {
                     oDialog.open();
                 });
-                            },
-                
-             onCloseDialog: function(){
-             this.byId("bankDetailsDialogId").close();    
-             },
-                
+            },
+
+            onCloseDialog: function () {
+                this.byId("bankDetailsDialogId").close();
+            },
+
         });
     });
