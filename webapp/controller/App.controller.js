@@ -14,11 +14,11 @@ sap.ui.define([
                 if (browserLan == 'es')
                     lanModel = "i18n_es";
                 else if (browserLan == 'en')
-                    lanModel = "i18n_en";
+                    lanModel = "i18n";
                 else if (browserLan == 'de')
                     lanModel = "i18n_de";
                 else
-                    lanModel = "i18n_en";
+                    lanModel = "i18n";
 
                 var oResourceModel = this.getOwnerComponent().getModel(lanModel);
                 this.getOwnerComponent().setModel(oResourceModel, "i18n");
