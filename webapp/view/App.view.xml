@@ -1,30 +1,66 @@
 <mvc:View controllerName="com.sap.demo.controller.App"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m" xmlns:core="sap.ui.core">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <App id="app">
-	
-<Page id="page1" title="My Bank Details">
-   <headerContent>
-    <Button
-         id="Refresh"
-         type="Emphasized"
-         text="Home"
-         class="sapUiSmallMarginEnd"/>
-    </headerContent>
-	<content>
-  
-    <core:Fragment id="bankDetailsFragment" 
-    fragmentName="com.sap.demo.view.fragments.BankDetails"
-    class="sapUiSmallMargin"
-    type="XML"/>
-    
-         <Button
-         id="helloDialogButton"
-         type="Neutral"
-         text="Find more details.."
-         press=".onOpenBankDetails"
-         class="sapUiSmallMarginBegin"/>
-		</content>
-      </Page>
+        <Page id="page1" title="{i18n>appTitle}">
+            <headerContent>
+                <Button id="Refresh" type="Emphasized" text="{i18n>home}" class="sapUiSmallMarginEnd"/>
+            </headerContent>
+
+
+
+            <content>
+
+
+
+
+
+               
+                        <core:Fragment id="bankDetailsFragment" fragmentName="com.sap.demo.view.fragments.BankDetails" class="sapUiSmallMargin" type="XML"/>
+
+                       
+                   
+
+                <Panel id="pCardDetails" expandable="true" headerText="Cards Details" width="auto" class="sapUiResponsiveMargin">
+                    <content>
+                        <List id="list" enableBusyIndicator="true"  growing="true" items="">
+                            <StandardListItem id="sListItem1" 
+                            title="Master Card (123679847298749834)" 
+                            description="Dabit Card: assigned on 23 Aug 2017" 
+                            icon="sap-icon://credit-card" 
+                            iconInset="false" 
+                            highlight="Information" 
+                            info="Active" 
+                            infoState="Information" 
+                            infoStateInverted="true" />
+
+                            <StandardListItem id="sListItem2" 
+                            title="Visa (1223232347298749834)" 
+                            description="Credit Card: assigned on 20 Oct 2020" 
+                            icon="sap-icon://credit-card" 
+                            iconInset="false" 
+                            highlight="Error" 
+                            info="Expired" 
+                            infoState="Error" 
+                            infoStateInverted="true" />
+
+                            <StandardListItem id="sListItem3" 
+                            title="Master Card (123679847298749834)" 
+                            description="Dabit Card: assigned on 23 Aug 2017" 
+                            icon="sap-icon://credit-card" 
+                            iconInset="false" 
+                            highlight="Success" 
+                            info="Active" 
+                            infoState="Success" 
+                            infoStateInverted="true" />
+
+                        </List>
+                    </content>
+                </Panel>
+
+
+            </content>
+        </Page>
     </App>
 </mvc:View>
