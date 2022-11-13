@@ -1,0 +1,24 @@
+<core:FragmentDefinition xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+   
+   <Panel id="pCardDetails" expandable="true" headerText="{i18n>cardDetails}" width="auto" class="sapUiResponsiveMargin">
+        <content>
+            <List id="list" enableBusyIndicator="true" width="50%" growing="true" items="{oBankDetails>/carddetails}">
+
+                <StandardListItem id="sListItem1" 
+                            title="{= ${oBankDetails>cardcompany}.toUpperCase()}
+                            {oBankDetails>cardnumber}" 
+                            description="{=${oBankDetails>cardtype}.toUpperCase()} : 
+                            {oBankDetails>assignmentdate}" 
+                            icon="sap-icon://credit-card" 
+                            iconInset="false" 
+                            highlight="{=${oBankDetails>state} === true? 'Success' : 'Error'}" 
+                            info="{=${oBankDetails>state} === true? 'Active' : 'Expired'}"
+                            infoState="{=${oBankDetails>state} === true ? 'Success':'Error'}" 
+                            infoStateInverted="true" />
+         </List>
+        </content>
+    </Panel>
+
+
+   </core:FragmentDefinition>

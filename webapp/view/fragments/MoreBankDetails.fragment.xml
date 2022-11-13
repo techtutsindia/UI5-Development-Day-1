@@ -1,30 +1,32 @@
 <core:FragmentDefinition xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Dialog id="bankDetailsDialogId" title="{i18n>confidentialDetails}">
-        <VBox id="vBox1" class="sapUiSmallMargin">
+        <VBox id="vBox1" binding="{oBankDetails>/accountdetails}" class="sapUiSmallMargin">
             <HBox id="hBox1">
                 <Label id="lblacnum" text="{i18n>bankAccDetails}" class="sapUiSmallMarginEnd"/>
-                <Text id="accountNum" text="7020923********"/>
+                <Text id="accountNum" text="{oBankDetails>accnum}"/>
             </HBox>
 
             <HBox id="hBox2">
                 <Label id="lblAcHolderNameId" text="{i18n>accHolderName}" class="sapUiSmallMarginEnd"/>
-                <Text id="idAcHolderNameValue" text="Samarendra Kumar Mitra"/>
+                <Text id="idAcHolderNameValue" text="{oBankDetails>name}"/>
             </HBox>
 
             <HBox id="hBox3">
                 <Label id="lblIFSCId" text="{i18n>iFSCode}" class="sapUiSmallMarginEnd"/>
-                <Text id="idIFSCValue" text="00000000052347"/>
+                <Text id="idIFSCValue" text="{oBankDetails>ifscode}"/>
             </HBox>
 
             <HBox id="hBox4">
                 <Label id="lblCustId" text="{i18n>custId}" class="sapUiSmallMarginEnd"/>
-                <Text id="idCustValue" text="1234*****"/>
+                <Text id="idCustValue" text="{oBankDetails>customerid}"/>
             </HBox>
 
             <HBox id="hBox5">
                 <Label id="lblAddressId" text="{i18n>address}" class="sapUiSmallMarginEnd"/>
-                <Text id="idAddressValue" text="**/** ************ *********"/>
+                <Text id="idAddressValue" text="{oBankDetails>address/housenumber}, {oBankDetails>address/street},
+                {oBankDetails>address/city}
+                {oBankDetails>address/state}, {oBankDetails>address/country}, {oBankDetails>address/postalcode}"/>
             </HBox>
 
         </VBox>

@@ -9,6 +9,20 @@ sap.ui.define([
 
         return Controller.extend("com.sap.demo.controller.App", {
             onInit: function () {
+
+             
+
+
+
+
+              //Global JSON Model 
+              this.setGlobalDataModel();
+                var oJsonModel = new sap.ui.model.json.JSONModel({
+                    profile: sap.ui.require.toUrl("com/sap/demo/images/profile.jpeg")
+                });
+                    
+                this.getView().setModel(oJsonModel);
+                //Application Language Selection
                 var browserLan = navigator.language,
                     lanModel;
                 if (browserLan == 'es')
@@ -38,6 +52,12 @@ sap.ui.define([
             onCloseDialog: function () {
                 this.byId("bankDetailsDialogId").close();
             },
+
+         // Set Global Data Model
+            setGlobalDataModel: function(){
+            let bankDetailsModel = this.getOwnerComponent().getModel("oBankDetails");
+            this.getView().setModel(bankDetailsModel);
+            }
 
         });
     });
