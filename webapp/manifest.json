@@ -16,6 +16,10 @@
             "toolsId": "2a362d18-58a6-4340-bcde-4c6e8473a0fc"
         },
         "dataSources": {
+            "JsonModel": {
+            "uri": "model/bankdetails.json",
+            "type": "JSON"
+            },
             "mainService": {
                 "uri": "/sap/opu/odata/",
                 "type": "OData",
@@ -72,15 +76,20 @@
             "i18n_es": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.sap.mybankdetails.i18n.i18n_es"
+                    "bundleName": "com.sap.demo.i18n.i18n_es"
                 }
             },
             "i18n_de": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "com.sap.mybankdetails.i18n.i18n_de"
+                    "bundleName": "com.sap.demo.i18n.i18n_de"
                 }
             },
+            "oBankDetails":{
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "JsonModel"
+            },
+
             "": {
                 "dataSource": "mainService",
                 "preload": true,
